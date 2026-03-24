@@ -33,7 +33,7 @@ The current default blueprints have real problems:
 
 ### Definitions
 
-**V2 Addon**: An addon with `ember-addon.version: 2` in package.json, as defined by RFC 507.
+**V2 Addon**: An addon with `ember-addon.version: 2` in package.json, as defined by [RFC 507](https://rfcs.emberjs.com/id/0507-embroider-v2-package-format/).
 
 **Single-package addon**: An addon with its test suite in the same package, rather than a separate test app in a monorepo.
 
