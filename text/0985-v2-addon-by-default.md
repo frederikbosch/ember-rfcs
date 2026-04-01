@@ -17,17 +17,13 @@ suite:
 
 ## Summary
 
-Make [`@ember/addon-blueprint`](https://github.com/ember-cli/ember-addon-blueprint) the default blueprint for new Ember addons, replacing the current v1 and v2 blueprints.
+This RFC proposes making [`@ember/addon-blueprint`](https://github.com/ember-cli/ember-addon-blueprint) the default blueprint for new Ember addons, replacing the current v1 and v2 blueprints. The existing blueprints present significant technical challenges that impact developer productivity and ecosystem compatibility. The new blueprint addresses these issues through modern tooling, streamlined architecture, and comprehensive TypeScript integration based on extensive community feedback and production usage patterns.
 
 ## Motivation
 
-The current default blueprints have real problems:
+The current default v1 addon blueprint generates addons that get rebuilt by every consuming app, which is slow and couples addon builds to app builds. There is no built-in path to modern tooling like TypeScript, Glint, or Vite.
 
-**V1 addons** get rebuilt by every consuming app, which is slow and couples addon builds to app builds.
-
-**The original V2 blueprint** fixed the build problem but required a monorepo and manual configuration. It also lacked TypeScript/Glint integration and modern Ember patterns.
-
-`@ember/addon-blueprint` fixes these by defaulting to a single-package structure, integrating Glint for template type safety, using native classes and strict mode throughout, and providing sensible tooling defaults out of the box.
+`@ember/addon-blueprint` already exists and has been widely adopted by the community. Making it the default gives new addon authors a working setup with single-package structure, Glint for template type safety, native classes and strict mode throughout, and sensible tooling defaults out of the box.
 
 ## Detailed design
 
@@ -95,7 +91,7 @@ my-addon/
 ### Package Configuration
 
 > [!NOTE]
-> This is an overview. Exact contents can change as needs evolve. We aim to cover the 80% use case without restricting anyone who needs more.
+> Blueprints are living artifacts -- the specific file contents shown below will evolve over time. This RFC focuses on the **design goals and architectural rationale** behind the configurations, not the exact file contents. The blueprint repository is the source of truth for current output.
 
 #### package.json
 
@@ -747,6 +743,14 @@ This validates that Ember apps can run well on modern build tools, pointing towa
 
 Existing addons are unaffected. New addons get the new blueprint automatically. Existing addons can migrate by generating a new project and copying relevant files, or using `npx ember-cli@latest addon <name> --blueprint @ember/addon-blueprint`.
 
+#### `ember-cli-update` Support
+
+The blueprint includes `config/ember-cli-update.json` so that `ember-cli-update` continues to work. This file tracks the blueprint package name and version, allowing `ember-cli-update` to detect available updates and apply them. The entry should reference `@ember/addon-blueprint` and the version used to generate the addon, following the same pattern used by the app blueprint.
+
+#### Codemod
+
+A codemod for migrating existing v1 addons to the new blueprint structure is out of scope for this RFC, but would be a valuable follow-up effort. [Mainmatter](https://mainmatter.com/) has expressed interest in developing such a codemod. In the meantime, addon authors can generate a fresh project with the new blueprint and manually move their source code into it. The [embroider-build/embroider](https://github.com/embroider-build/embroider) repo also has documentation on how to work with and migrate to v2 addons.
+
 ## How we teach this
 
 ### Documentation Updates
@@ -754,6 +758,7 @@ Existing addons are unaffected. New addons get the new blueprint automatically. 
 - Update the Ember Guides and CLI docs to reference the new blueprint
 - The blueprint README covers customization, publishing, and multi-version support
 - Provide migration guides for v1 and v2 addon authors
+- The blueprint should generate parallel `.md` files (or inline comments) alongside config files to explain the purpose and rationale of each configuration. This helps addon authors understand *why* a config exists, not just *what* it contains, and reduces confusion when configs change across blueprint versions
 
 ### Key Concepts for Addon Authors
 
