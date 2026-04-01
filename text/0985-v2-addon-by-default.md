@@ -93,7 +93,7 @@ my-addon/
 > [!NOTE]
 > Blueprints are living artifacts -- the specific file contents shown below will evolve over time. This RFC focuses on the **design goals and architectural rationale** behind the configurations, not the exact file contents. The blueprint repository is the source of truth for current output.
 
-#### package.json
+<details><summary>package.json</summary>
 
 ```json
 {
@@ -140,7 +140,9 @@ my-addon/
 
 The `files` array includes `src` alongside `dist` and `declarations` so consumers get source-level go-to-definition in their editors.
 
-#### Development vs. Production Configs
+</details>
+
+<details><summary>Development vs. Production Configs</summary>
 
 The blueprint splits config into dev and publish variants. This is the key architectural pattern throughout:
 
@@ -149,7 +151,9 @@ The blueprint splits config into dev and publish variants. This is the key archi
 
 This split matters because macros should be evaluated by the consuming app (not baked in at publish time), and `lint:types` against the publish tsconfig catches accidental usage of Vite or Embroider internals in published code.
 
-#### Vite Config (`vite.config.mjs`)
+</details>
+
+<details><summary>Vite Config (vite.config.mjs)</summary>
 
 ```javascript
 import { defineConfig } from 'vite';
@@ -178,7 +182,9 @@ export default defineConfig({
 });
 ```
 
-#### Rollup Config (`rollup.config.mjs`)
+</details>
+
+<details><summary>Rollup Config (rollup.config.mjs)</summary>
 
 ```javascript
 import { babel } from '@rollup/plugin-babel';
@@ -224,7 +230,9 @@ export default {
 };
 ```
 
-### TypeScript and Glint
+</details>
+
+<details><summary>TypeScript and Glint</summary>
 
 TypeScript is opt-in via `--typescript`.
 
@@ -270,7 +278,9 @@ The blueprint uses two tsconfigs:
 
 The Glint template registry (`src/template-registry.ts`) lets apps using loose mode (hbs files) consume your types. Not needed if your library only targets strict mode consumers.
 
-### The Strict Resolver and `modules`
+</details>
+
+<details><summary>The Strict Resolver and <code>modules</code></summary>
 
 Both the test helper and the demo app use `ember-strict-application-resolver` instead of the classic Ember resolver. Instead of filesystem conventions, you explicitly register modules via a `modules` object. Each key must match a `./[type]/[name]` pattern (see [RFC 1132](https://rfcs.emberjs.com/id/1132-default-strict-resolver)):
 
@@ -292,7 +302,9 @@ This pattern is used in two places:
 - **Test helper** -- registers a minimal Router and optionally any services needed for tests
 - **Demo app** -- registers the Router, templates, services, and anything else the demo needs
 
-### Demo App
+</details>
+
+<details><summary>Demo App</summary>
 
 The blueprint includes a small demo application for manually testing your addon during development. Run `npm start` (or `pnpm start`) to launch Vite's dev server, which serves the root `index.html`:
 
@@ -340,7 +352,9 @@ Router.map(function () {});
 
 The demo app is a real Ember app -- it has routes, templates, and services -- but it boots directly via `ember-strict-application-resolver` with no ember-cli build step. Any addon code you want to exercise in the demo needs to be imported in the demo app's templates or registered in `modules`. The demo app's files are not published (they're not in the `files` array or `exports`).
 
-### Testing
+</details>
+
+<details><summary>Testing</summary>
 
 Tests also run entirely on Vite -- no ember-cli build pipeline, no webpack.
 
@@ -512,7 +526,9 @@ export default {
 
 Older Ember versions (5.x) need `@embroider/compat` and an `ember-cli-build.cjs` shim. Ember 6.4+ runs natively without compat mode.
 
-### Babel Configs
+</details>
+
+<details><summary>Babel Configs</summary>
 
 **Dev (`babel.config.cjs`)** -- used by your editor and tests. Includes macro evaluation and compat transforms:
 
@@ -586,7 +602,9 @@ module.exports = {
 };
 ```
 
-### Linting
+</details>
+
+<details><summary>Linting</summary>
 
 **ESLint** uses flat config (`eslint.config.mjs`) with `defineConfig` and `globalIgnores`:
 
@@ -686,7 +704,9 @@ export default {
 };
 ```
 
-### CI/CD
+</details>
+
+<details><summary>CI/CD</summary>
 
 The blueprint generates GitHub Actions workflows (shown here with pnpm; npm/yarn variants are also generated):
 
@@ -717,7 +737,9 @@ try-scenarios:
 
 **Push dist workflow** (`push-dist.yml`) -- on push to main, builds the addon and pushes compiled assets to a `dist` branch for git-based consumption.
 
-### V1 Compatibility
+</details>
+
+<details><summary>V1 Compatibility</summary>
 
 ```javascript
 // addon-main.cjs
@@ -727,6 +749,8 @@ module.exports = addonV1Shim(__dirname);
 ```
 
 This shim translates V2 package metadata into V1 build hooks so the addon works in classic ember-cli apps.
+
+</details>
 
 ### Influence on Future App Blueprint
 
