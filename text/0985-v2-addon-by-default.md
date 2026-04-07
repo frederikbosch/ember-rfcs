@@ -930,7 +930,14 @@ The consuming app's build tooling (Vite/Embroider) handles the transpilation. Th
 
 ### Generators?
 
-ember-cli is not included in the v2 addon blueprint (intentionally), but will need to support generating things in v2 addons for those that want that functionality.
+ember-cli is not included in the v2 addon blueprint (intentionally).
+At present, we error with:
+```
+# pnpm dlx ember-cli g component foo
+
+You have to be inside an ember-cli project to use the generate command.
+```
+Which is a good error, because ember-cli is not in the v2 addon blueprint.
 
 ### Streamlining migration for large, complex v1/v2 addons
 
