@@ -763,6 +763,20 @@ The test setup here is a proof-of-concept for future compat-less Ember apps:
 
 This validates that Ember apps can run well on modern build tools, pointing toward simpler app blueprints in the future.
 
+### Publish Strategy
+
+> [!NOTE]
+> This is partially out of scope for this RFC, but is more so a reminder on where we want to be with our blueprint releases
+
+We continue using the release-plan [without following the ember-cli release train](https://github.com/emberjs/rfcs/pull/1160#issuecomment-3730235634). This allows updates to the blueprint to be more easily opted in to by consumers, and allows maintainers to spend less time coordinating the release.
+
+In short:
+- ember-cli adds the blueprint as a dependency
+  - ember-cli-update reads this version, choosing the latest patch release
+  - we bump the version every ember-cli release
+- the blueprint can have any number of major/minors between ember-cli versions, which is fine, because at the next ember-cli release, we set the current blueprint version
+
+
 ### Migration
 
 Existing addons are unaffected. New addons get the new blueprint automatically. Existing addons can migrate by generating a new project and copying relevant files, or using `npx ember-cli@latest addon <name> --blueprint @ember/addon-blueprint`.
