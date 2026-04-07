@@ -928,12 +928,11 @@ The consuming app's build tooling (Vite/Embroider) handles the transpilation. Th
 
 ## Previously unresolved questions
 
-### V1 vs V2 format Usage?
+### V1 vs V2 format Usage (is the ecosystem ready?)
 
-Data accumulated from Apr 2024 -> Mar 2026
+They are more ready than we've demonstrated!
 
-
-Top 100 addons per category, 
+Here are the top 100 addons per category (v1 addons, v2 addons, needs evaluating, or no longer needed) 
 - seprated into years by last published, 
 - sorted by the number of downloads in the last month (as of 2026-04-07).
 
@@ -950,138 +949,132 @@ Tho also note that many old addons simply are not needed anymore (polyfills, vit
 
 </summary>
 
-Last published breakdown: 
-
-2022: 2, 
-2023: 2, 
-2024: 8, 
-2025: 50, 
-2026: 38
+Last published breakdown: 2022: 2, 2023: 2, 2024: 8, 2025: 50, 2026: 38
 
 **2022**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| @ember-compat/tracked-built-ins | 10,032,255 | 114,640 | 2022-11-16 | 0.9.1 |
-| ember-css-url | 7,836,462 | 83,189 | 2022-07-06 | 1.0.0 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| @ember-compat/tracked-built-ins | 114,640 | 2022-11-16 | 0.9.1 |
+| ember-css-url | 83,189 | 2022-07-06 | 1.0.0 |
 
 **2023**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-lifeline | 23,859,567 | 174,334 | 2023-05-05 | 7.0.0 |
-| ember-route-template | 14,121,594 | 151,868 | 2023-11-13 | 1.0.3 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-lifeline | 174,334 | 2023-05-05 | 7.0.0 |
+| ember-route-template | 151,868 | 2023-11-13 | 1.0.3 |
 
 **2024**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| @glimmer/component | 120,678,687 | 891,505 | 2024-10-29 | 2.0.0 |
-| ember-cookies | 43,200,441 | 266,028 | 2024-12-28 | 1.3.0 |
-| ember-sinon-qunit | 28,788,417 | 227,878 | 2024-07-17 | 7.5.0 |
-| ember-window-mock | 24,875,874 | 195,958 | 2024-08-30 | 1.0.2 |
-| ember-click-outside | 23,909,796 | 120,402 | 2024-10-05 | 6.1.1 |
-| ember-autofocus-modifier | 12,824,406 | 83,872 | 2024-01-17 | 7.0.1 |
-| ember-browser-services | 5,370,219 | 42,163 | 2024-10-25 | 5.0.1 |
-| ember-phone-input | 829,086 | 14,193 | 2024-01-22 | 10.0.0 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| @glimmer/component | 891,505 | 2024-10-29 | 2.0.0 |
+| ember-cookies | 266,028 | 2024-12-28 | 1.3.0 |
+| ember-sinon-qunit | 227,878 | 2024-07-17 | 7.5.0 |
+| ember-window-mock | 195,958 | 2024-08-30 | 1.0.2 |
+| ember-click-outside | 120,402 | 2024-10-05 | 6.1.1 |
+| ember-autofocus-modifier | 83,872 | 2024-01-17 | 7.0.1 |
+| ember-browser-services | 42,163 | 2024-10-25 | 5.0.1 |
+| ember-phone-input | 14,193 | 2024-01-22 | 10.0.0 |
 
 **2025**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| @ember/test-helpers | 156,315,537 | 986,217 | 2025-11-14 | 5.4.1 |
-| ember-qunit | 144,226,467 | 884,380 | 2025-09-12 | 9.0.4 |
-| @ember/test-waiters | 124,979,085 | 822,155 | 2025-07-05 | 4.1.1 |
-| ember-truth-helpers | 112,821,660 | 670,990 | 2025-09-12 | 5.0.0 |
-| ember-inflector | 105,370,749 | 639,229 | 2025-03-12 | 6.0.0 |
-| ember-basic-dropdown | 75,006,828 | 486,050 | 2025-12-14 | 8.11.0 |
-| ember-element-helper | 72,573,876 | 464,705 | 2025-05-12 | 0.8.8 |
-| ember-page-title | 68,902,623 | 417,690 | 2025-08-22 | 9.0.3 |
-| ember-assign-helper | 59,464,890 | 393,324 | 2025-05-12 | 0.5.1 |
-| ember-style-modifier | 65,645,721 | 380,179 | 2025-08-25 | 4.5.1 |
-| ember-power-select | 55,148,391 | 343,062 | 2025-12-07 | 8.12.1 |
-| ember-cli-string-helpers | 39,804,336 | 272,365 | 2025-07-22 | 8.0.1 |
-| ember-validators | 44,187,849 | 269,841 | 2025-04-21 | 5.0.0 |
-| ember-resources | 25,250,382 | 216,372 | 2025-08-23 | 7.0.7 |
-| ember-math-helpers | 25,403,769 | 213,128 | 2025-04-07 | 5.0.0 |
-| ember-cli-page-object | 27,238,554 | 211,158 | 2025-09-05 | 2.3.2 |
-| ember-raf-scheduler | 39,835,962 | 206,235 | 2025-06-06 | 0.5.0 |
-| @embroider/router | 20,936,853 | 200,194 | 2025-11-25 | 3.0.6 |
-| ember-async-data | 24,012,477 | 180,617 | 2025-05-12 | 2.0.1 |
-| ember-keyboard | 23,456,817 | 166,736 | 2025-10-03 | 9.0.4 |
-| ember-set-helper | 20,683,305 | 161,333 | 2025-10-04 | 3.1.0 |
-| ember-can | 19,178,721 | 145,220 | 2025-04-15 | 8.0.0 |
-| ember-power-calendar | 26,722,791 | 136,768 | 2025-09-16 | 1.8.0 |
-| liquid-fire | 19,685,034 | 123,759 | 2025-05-13 | 0.37.1 |
-| ember-changeset | 27,685,728 | 123,396 | 2025-05-01 | 5.0.0 |
-| ember-mirage | 5,529,483 | 119,505 | 2025-06-26 | 0.4.3 |
-| ember-stargate | 9,450,171 | 107,922 | 2025-09-06 | 1.0.2 |
-| ember-sortable | 24,548,643 | 107,884 | 2025-08-13 | 5.3.3 |
-| ember-curry-component | 7,463,016 | 107,418 | 2025-08-21 | 0.3.1 |
-| ember-changeset-validations | 18,984,825 | 102,566 | 2025-05-01 | 5.0.0 |
-| @nullvoxpopuli/legacy-prototype-extensions | 2,516,580 | 91,185 | 2025-06-06 | 0.1.0 |
-| @docfy/ember | 6,407,964 | 85,641 | 2025-12-08 | 0.11.0 |
-| ember-power-calendar-moment | 16,037,172 | 83,493 | 2025-05-12 | 1.0.4 |
-| ember-modify-based-class-resource | 5,928,381 | 74,244 | 2025-05-10 | 1.1.2 |
-| ember-link | 11,872,053 | 70,489 | 2025-08-07 | 3.5.0 |
-| ember-data-resources | 6,219,954 | 69,616 | 2025-12-23 | 5.3.2 |
-| ember-animated | 14,764,860 | 67,917 | 2025-05-17 | 2.2.0 |
-| @fortawesome/ember-fontawesome | 8,417,979 | 67,650 | 2025-08-19 | 3.1.0 |
-| ember-router-helpers | 9,176,418 | 67,601 | 2025-12-08 | 1.0.1 |
-| ember-render-helpers | 10,498,860 | 66,065 | 2025-09-12 | 2.0.0 |
-| @embroider/legacy-inspector-support | 2,260,512 | 65,748 | 2025-10-07 | 0.1.3 |
-| ember-drag-drop | 7,950,051 | 64,952 | 2025-02-18 | 1.0.1 |
-| ember-infinity | 8,708,130 | 64,831 | 2025-04-29 | 3.0.2 |
-| ember-css-transitions | 8,554,581 | 63,380 | 2025-04-15 | 4.5.0 |
-| reactiveweb | 6,702,777 | 60,764 | 2025-12-23 | 1.9.1 |
-| ember-flatpickr | 7,872,498 | 48,692 | 2025-11-10 | 9.0.2 |
-| ember-power-select-with-create | 9,333,036 | 44,163 | 2025-11-07 | 3.1.0 |
-| ember-cli-notifications | 4,247,838 | 42,987 | 2025-01-08 | 9.1.0 |
-| ember-pikaday | 695,939 | 31,145 | 2025-02-05 | 5.1.1 |
-| ember-promise-modals | 808,287 | 14,750 | 2025-07-16 | 5.0.1 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| @ember/test-helpers | 986,217 | 2025-11-14 | 5.4.1 |
+| ember-qunit | 884,380 | 2025-09-12 | 9.0.4 |
+| @ember/test-waiters | 822,155 | 2025-07-05 | 4.1.1 |
+| ember-truth-helpers | 670,990 | 2025-09-12 | 5.0.0 |
+| ember-inflector | 639,229 | 2025-03-12 | 6.0.0 |
+| ember-basic-dropdown | 486,050 | 2025-12-14 | 8.11.0 |
+| ember-element-helper | 464,705 | 2025-05-12 | 0.8.8 |
+| ember-page-title | 417,690 | 2025-08-22 | 9.0.3 |
+| ember-assign-helper | 393,324 | 2025-05-12 | 0.5.1 |
+| ember-style-modifier | 380,179 | 2025-08-25 | 4.5.1 |
+| ember-power-select | 343,062 | 2025-12-07 | 8.12.1 |
+| ember-cli-string-helpers | 272,365 | 2025-07-22 | 8.0.1 |
+| ember-validators | 269,841 | 2025-04-21 | 5.0.0 |
+| ember-resources | 216,372 | 2025-08-23 | 7.0.7 |
+| ember-math-helpers | 213,128 | 2025-04-07 | 5.0.0 |
+| ember-cli-page-object | 211,158 | 2025-09-05 | 2.3.2 |
+| ember-raf-scheduler | 206,235 | 2025-06-06 | 0.5.0 |
+| @embroider/router | 200,194 | 2025-11-25 | 3.0.6 |
+| ember-async-data | 180,617 | 2025-05-12 | 2.0.1 |
+| ember-keyboard | 166,736 | 2025-10-03 | 9.0.4 |
+| ember-set-helper | 161,333 | 2025-10-04 | 3.1.0 |
+| ember-can | 145,220 | 2025-04-15 | 8.0.0 |
+| ember-power-calendar | 136,768 | 2025-09-16 | 1.8.0 |
+| liquid-fire | 123,759 | 2025-05-13 | 0.37.1 |
+| ember-changeset | 123,396 | 2025-05-01 | 5.0.0 |
+| ember-mirage | 119,505 | 2025-06-26 | 0.4.3 |
+| ember-stargate | 107,922 | 2025-09-06 | 1.0.2 |
+| ember-sortable | 107,884 | 2025-08-13 | 5.3.3 |
+| ember-curry-component | 107,418 | 2025-08-21 | 0.3.1 |
+| ember-changeset-validations | 102,566 | 2025-05-01 | 5.0.0 |
+| @nullvoxpopuli/legacy-prototype-extensions | 91,185 | 2025-06-06 | 0.1.0 |
+| @docfy/ember | 85,641 | 2025-12-08 | 0.11.0 |
+| ember-power-calendar-moment | 83,493 | 2025-05-12 | 1.0.4 |
+| ember-modify-based-class-resource | 74,244 | 2025-05-10 | 1.1.2 |
+| ember-link | 70,489 | 2025-08-07 | 3.5.0 |
+| ember-data-resources | 69,616 | 2025-12-23 | 5.3.2 |
+| ember-animated | 67,917 | 2025-05-17 | 2.2.0 |
+| @fortawesome/ember-fontawesome | 67,650 | 2025-08-19 | 3.1.0 |
+| ember-router-helpers | 67,601 | 2025-12-08 | 1.0.1 |
+| ember-render-helpers | 66,065 | 2025-09-12 | 2.0.0 |
+| @embroider/legacy-inspector-support | 65,748 | 2025-10-07 | 0.1.3 |
+| ember-drag-drop | 64,952 | 2025-02-18 | 1.0.1 |
+| ember-infinity | 64,831 | 2025-04-29 | 3.0.2 |
+| ember-css-transitions | 63,380 | 2025-04-15 | 4.5.0 |
+| reactiveweb | 60,764 | 2025-12-23 | 1.9.1 |
+| ember-flatpickr | 48,692 | 2025-11-10 | 9.0.2 |
+| ember-power-select-with-create | 44,163 | 2025-11-07 | 3.1.0 |
+| ember-cli-notifications | 42,987 | 2025-01-08 | 9.1.0 |
+| ember-pikaday | 31,145 | 2025-02-05 | 5.1.1 |
+| ember-promise-modals | 14,750 | 2025-07-16 | 5.0.1 |
 
 **2026**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-source | 186,808,986 | 1,252,091 | 2026-03-31 | 6.12.0 |
-| ember-modifier | 137,285,181 | 866,324 | 2026-02-03 | 4.3.0 |
-| ember-concurrency | 110,864,934 | 664,342 | 2026-02-18 | 5.2.0 |
-| ember-data | 95,194,035 | 539,691 | 2026-01-12 | 5.8.1 |
-| ember-cli-deprecation-workflow | 64,106,181 | 478,222 | 2026-02-27 | 4.0.1 |
-| @ember-data/model | 86,939,136 | 462,460 | 2026-01-12 | 5.8.1 |
-| @ember-data/store | 85,860,918 | 459,409 | 2026-01-12 | 5.8.1 |
-| @ember-data/adapter | 84,414,753 | 459,045 | 2026-01-12 | 5.8.1 |
-| @ember-data/serializer | 82,333,215 | 455,863 | 2026-01-12 | 5.8.1 |
-| @ember-data/debug | 80,805,258 | 443,057 | 2026-01-12 | 5.8.1 |
-| tracked-built-ins | 58,917,069 | 378,673 | 2026-03-20 | 4.1.2 |
-| ember-intl | 45,622,008 | 265,339 | 2026-04-01 | 8.2.2 |
-| ember-simple-auth | 34,333,533 | 227,886 | 2026-02-02 | 8.3.0 |
-| @ember-data/request | 37,042,326 | 207,429 | 2026-01-12 | 5.8.1 |
-| ember-moment | 31,260,276 | 204,677 | 2026-03-25 | 11.1.0 |
-| @ember-data/legacy-compat | 36,155,826 | 196,895 | 2026-01-12 | 5.8.1 |
-| @ember-data/json-api | 36,104,535 | 196,238 | 2026-01-12 | 5.8.1 |
-| @ember-data/graph | 35,991,936 | 193,469 | 2026-01-12 | 5.8.1 |
-| ember-focus-trap | 26,904,186 | 188,952 | 2026-03-17 | 2.0.0 |
-| @warp-drive/core-types | 22,726,737 | 187,067 | 2026-01-12 | 5.8.1 |
-| @html-next/vertical-collection | 27,052,803 | 172,944 | 2026-02-27 | 5.0.3 |
-| ember-cli-flash | 25,021,728 | 170,176 | 2026-02-10 | 7.0.0 |
-| ember-a11y-testing | 24,872,517 | 158,520 | 2026-02-19 | 8.0.0 |
-| @nullvoxpopuli/ember-composable-helpers | 10,309,275 | 139,480 | 2026-03-21 | 5.3.1 |
-| @ember-data/request-utils | 23,063,526 | 130,831 | 2026-01-12 | 5.8.1 |
-| ember-a11y-refocus | 9,429,003 | 106,948 | 2026-02-26 | 5.2.1 |
-| tracked-toolbox | 17,698,059 | 105,020 | 2026-01-09 | 2.2.0 |
-| ember-file-upload | 21,576,303 | 102,266 | 2026-04-03 | 10.0.0 |
-| @hashicorp/design-system-components | 8,326,476 | 101,277 | 2026-03-09 | 6.1.0 |
-| @warp-drive/core | 4,957,776 | 88,635 | 2026-01-12 | 5.8.1 |
-| @warp-drive/utilities | 4,858,560 | 87,396 | 2026-01-12 | 5.8.1 |
-| @warp-drive/legacy | 4,144,599 | 71,998 | 2026-01-12 | 5.8.1 |
-| @warp-drive/json-api | 4,051,980 | 71,309 | 2026-01-12 | 5.8.1 |
-| ember-launch-darkly | 9,265,005 | 69,901 | 2026-03-12 | 6.0.1 |
-| ember-welcome-page | 12,674,124 | 66,339 | 2026-01-10 | 8.0.5 |
-| @warp-drive/ember | 5,977,287 | 65,540 | 2026-01-12 | 5.8.1 |
-| ember-provide-consume-context | 4,746,339 | 49,158 | 2026-02-13 | 0.9.0 |
-| ember-primitives | 3,567,699 | 41,338 | 2026-04-04 | 0.55.1 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-source | 1,252,091 | 2026-03-31 | 6.12.0 |
+| ember-modifier | 866,324 | 2026-02-03 | 4.3.0 |
+| ember-concurrency | 664,342 | 2026-02-18 | 5.2.0 |
+| ember-data | 539,691 | 2026-01-12 | 5.8.1 |
+| ember-cli-deprecation-workflow | 478,222 | 2026-02-27 | 4.0.1 |
+| @ember-data/model | 462,460 | 2026-01-12 | 5.8.1 |
+| @ember-data/store | 459,409 | 2026-01-12 | 5.8.1 |
+| @ember-data/adapter | 459,045 | 2026-01-12 | 5.8.1 |
+| @ember-data/serializer | 455,863 | 2026-01-12 | 5.8.1 |
+| @ember-data/debug | 443,057 | 2026-01-12 | 5.8.1 |
+| tracked-built-ins | 378,673 | 2026-03-20 | 4.1.2 |
+| ember-intl | 265,339 | 2026-04-01 | 8.2.2 |
+| ember-simple-auth | 227,886 | 2026-02-02 | 8.3.0 |
+| @ember-data/request | 207,429 | 2026-01-12 | 5.8.1 |
+| ember-moment | 204,677 | 2026-03-25 | 11.1.0 |
+| @ember-data/legacy-compat | 196,895 | 2026-01-12 | 5.8.1 |
+| @ember-data/json-api | 196,238 | 2026-01-12 | 5.8.1 |
+| @ember-data/graph | 193,469 | 2026-01-12 | 5.8.1 |
+| ember-focus-trap | 188,952 | 2026-03-17 | 2.0.0 |
+| @warp-drive/core-types | 187,067 | 2026-01-12 | 5.8.1 |
+| @html-next/vertical-collection | 172,944 | 2026-02-27 | 5.0.3 |
+| ember-cli-flash | 170,176 | 2026-02-10 | 7.0.0 |
+| ember-a11y-testing | 158,520 | 2026-02-19 | 8.0.0 |
+| @nullvoxpopuli/ember-composable-helpers | 139,480 | 2026-03-21 | 5.3.1 |
+| @ember-data/request-utils | 130,831 | 2026-01-12 | 5.8.1 |
+| ember-a11y-refocus | 106,948 | 2026-02-26 | 5.2.1 |
+| tracked-toolbox | 105,020 | 2026-01-09 | 2.2.0 |
+| ember-file-upload | 102,266 | 2026-04-03 | 10.0.0 |
+| @hashicorp/design-system-components | 101,277 | 2026-03-09 | 6.1.0 |
+| @warp-drive/core | 88,635 | 2026-01-12 | 5.8.1 |
+| @warp-drive/utilities | 87,396 | 2026-01-12 | 5.8.1 |
+| @warp-drive/legacy | 71,998 | 2026-01-12 | 5.8.1 |
+| @warp-drive/json-api | 71,309 | 2026-01-12 | 5.8.1 |
+| ember-launch-darkly | 69,901 | 2026-03-12 | 6.0.1 |
+| ember-welcome-page | 66,339 | 2026-01-10 | 8.0.5 |
+| @warp-drive/ember | 65,540 | 2026-01-12 | 5.8.1 |
+| ember-provide-consume-context | 49,158 | 2026-02-13 | 0.9.0 |
+| ember-primitives | 41,338 | 2026-04-04 | 0.55.1 |
 
 </details>
 
@@ -1092,167 +1085,157 @@ Last published breakdown:
 
 </summary>
 
-Last published breakdown: 
-2017: 1, 
-2018: 4, 
-2019: 7, 
-2020: 15, 
-2021: 10, 
-2022: 15, 
-2023: 11, 
-2024: 9, 
-2025: 23, 
-2026: 5
+Last published breakdown: 2017: 1, 2018: 4, 2019: 7, 2020: 15, 2021: 10, 2022: 15, 2023: 11, 2024: 9, 2025: 23, 2026: 5
 
 **2017**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-ignore-children-helper | 5,625,351 | 42,238 | 2017-10-17 | 1.0.1 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-ignore-children-helper | 42,238 | 2017-10-17 | 1.0.1 |
 
 **2018**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-cli-blueprint-test-helpers | 3,867,003 | 25,945 | 2018-12-18 | 0.19.2 |
-| ember-hammertime | 379,223 | 23,432 | 2018-10-16 | 1.6.0 |
-| ember-element-resize-detector | 446,800 | 19,411 | 2018-12-03 | 0.4.0 |
-| ember-power-select-blockless | 874,116 | 1,990 | 2018-05-19 | 0.5.0 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-cli-blueprint-test-helpers | 25,945 | 2018-12-18 | 0.19.2 |
+| ember-hammertime | 23,432 | 2018-10-16 | 1.6.0 |
+| ember-element-resize-detector | 19,411 | 2018-12-03 | 0.4.0 |
+| ember-power-select-blockless | 1,990 | 2018-05-19 | 0.5.0 |
 
 **2019**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-radio-button | 11,871,756 | 65,725 | 2019-05-01 | 2.0.1 |
-| ember-cli-html-minifier | 1,294,164 | 65,327 | 2019-12-12 | 1.1.0 |
-| ember-cli-document-title-northm | 381,290 | 29,684 | 2019-04-15 | 1.0.3 |
-| @ember-decorators/babel-transforms | 400,309 | 21,271 | 2019-04-06 | 5.2.0 |
-| ember-cli-yuidoc | 3,017,952 | 21,191 | 2019-11-02 | 0.9.1 |
-| ember-cli-github-pages | 409,371 | 18,512 | 2019-06-13 | 0.2.2 |
-| ember-i18n | 396,083 | 14,663 | 2019-01-29 | 5.3.1 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-radio-button | 65,725 | 2019-05-01 | 2.0.1 |
+| ember-cli-html-minifier | 65,327 | 2019-12-12 | 1.1.0 |
+| ember-cli-document-title-northm | 29,684 | 2019-04-15 | 1.0.3 |
+| @ember-decorators/babel-transforms | 21,271 | 2019-04-06 | 5.2.0 |
+| ember-cli-yuidoc | 21,191 | 2019-11-02 | 0.9.1 |
+| ember-cli-github-pages | 18,512 | 2019-06-13 | 0.2.2 |
+| ember-i18n | 14,663 | 2019-01-29 | 5.3.1 |
 
 **2020**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-copy | 36,201,195 | 227,392 | 2020-10-12 | 2.0.1 |
-| @ember/ordered-set | 23,710,779 | 159,105 | 2020-10-28 | 4.0.0 |
-| ember-text-measurer | 38,523,951 | 156,431 | 2020-05-22 | 0.6.0 |
-| ember-event-helpers | 15,972,858 | 58,957 | 2020-04-07 | 0.1.1 |
-| ember-cli-chart | 369,193 | 42,441 | 2020-08-06 | 3.7.2 |
-| ember-gestures | 478,722 | 39,087 | 2020-08-16 | 2.0.1 |
-| ember-api-actions | 610,729 | 36,082 | 2020-04-04 | 0.2.9 |
-| ember-diff-attrs | 664,955 | 31,268 | 2020-10-02 | 0.2.3 |
-| ember-on-modifier | 439,919 | 25,394 | 2020-04-16 | 1.0.1 |
-| ember-data-url-templates | 402,510 | 20,550 | 2020-08-03 | 0.4.5 |
-| ember-web-app | 447,920 | 18,568 | 2020-10-30 | 5.0.1 |
-| ember-data-change-tracker | 384,368 | 18,232 | 2020-04-28 | 0.10.1 |
-| ember-scrollable | 401,706 | 15,521 | 2020-02-06 | 1.0.2 |
-| ember-light-table | 385,517 | 15,499 | 2020-07-29 | 3.0.0-beta.0 |
-| ember-set-body-class | 951,840 | 11,303 | 2020-12-02 | 1.0.2 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-copy | 227,392 | 2020-10-12 | 2.0.1 |
+| @ember/ordered-set | 159,105 | 2020-10-28 | 4.0.0 |
+| ember-text-measurer | 156,431 | 2020-05-22 | 0.6.0 |
+| ember-event-helpers | 58,957 | 2020-04-07 | 0.1.1 |
+| ember-cli-chart | 42,441 | 2020-08-06 | 3.7.2 |
+| ember-gestures | 39,087 | 2020-08-16 | 2.0.1 |
+| ember-api-actions | 36,082 | 2020-04-04 | 0.2.9 |
+| ember-diff-attrs | 31,268 | 2020-10-02 | 0.2.3 |
+| ember-on-modifier | 25,394 | 2020-04-16 | 1.0.1 |
+| ember-data-url-templates | 20,550 | 2020-08-03 | 0.4.5 |
+| ember-web-app | 18,568 | 2020-10-30 | 5.0.1 |
+| ember-data-change-tracker | 18,232 | 2020-04-28 | 0.10.1 |
+| ember-scrollable | 15,521 | 2020-02-06 | 1.0.2 |
+| ember-light-table | 15,499 | 2020-07-29 | 3.0.0-beta.0 |
+| ember-set-body-class | 11,303 | 2020-12-02 | 1.0.2 |
 
 **2021**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-inline-svg | 13,562,199 | 114,939 | 2021-11-23 | 1.0.1 |
-| ember-promise-helpers | 9,307,881 | 58,694 | 2021-11-09 | 2.0.0 |
-| ember-router-scroll | 8,886,861 | 43,524 | 2021-11-18 | 4.1.2 |
-| ember-cli-less | 665,738 | 39,042 | 2021-06-17 | 3.0.2 |
-| ember-deep-set | 863,032 | 27,954 | 2021-12-05 | 0.3.0 |
-| ember-cli-accounting | 551,793 | 24,502 | 2021-12-30 | 2.1.0 |
-| ember-cli-document-title | 397,451 | 15,312 | 2021-01-09 | 1.1.0 |
-| qunit-console-grouper | 591,548 | 8,708 | 2021-02-03 | 0.3.0 |
-| ember-steps | 466,940 | 2,194 | 2021-05-26 | 10.0.1 |
-| ember-swiper6 | 394,460 | 69 | 2021-08-08 | 2.1.6 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-inline-svg | 114,939 | 2021-11-23 | 1.0.1 |
+| ember-promise-helpers | 58,694 | 2021-11-09 | 2.0.0 |
+| ember-router-scroll | 43,524 | 2021-11-18 | 4.1.2 |
+| ember-cli-less | 39,042 | 2021-06-17 | 3.0.2 |
+| ember-deep-set | 27,954 | 2021-12-05 | 0.3.0 |
+| ember-cli-accounting | 24,502 | 2021-12-30 | 2.1.0 |
+| ember-cli-document-title | 15,312 | 2021-01-09 | 1.1.0 |
+| qunit-console-grouper | 8,708 | 2021-02-03 | 0.3.0 |
+| ember-steps | 2,194 | 2021-05-26 | 10.0.1 |
+| ember-swiper6 | 69 | 2021-08-08 | 2.1.6 |
 
 **2022**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-in-viewport | 26,149,644 | 213,632 | 2022-11-09 | 4.1.0 |
-| ember-buffered-proxy | 11,741,013 | 131,064 | 2022-05-11 | 2.1.1 |
-| ember-short-number | 4,172,391 | 64,615 | 2022-04-30 | 2.0.0 |
-| active-model-adapter | 17,671,680 | 55,611 | 2022-10-23 | 4.0.1 |
-| ember-resize-observer-service | 14,524,146 | 46,977 | 2022-05-28 | 1.1.0 |
-| ember-app-scheduler | 8,062,362 | 43,661 | 2022-01-29 | 7.0.1 |
-| ember-toggle | 5,949,477 | 39,883 | 2022-02-02 | 9.0.3 |
-| ember-angle-bracket-invocation-polyfill | 813,456 | 38,859 | 2022-05-18 | 3.0.2 |
-| ember-tag-input | 548,162 | 28,288 | 2022-10-30 | 3.1.0 |
-| ember-component-css | 592,908 | 27,841 | 2022-05-09 | 0.8.1 |
-| ember-cli-build-notifications | 521,898 | 27,807 | 2022-12-30 | 2.0.0 |
-| ember-websockets | 354,380 | 16,125 | 2022-05-23 | 10.2.1 |
-| ember-useragent | 477,428 | 15,226 | 2022-03-01 | 0.12.0 |
-| ember-cli-browser-navigation-button-test-helper | 627,044 | 10,126 | 2022-02-26 | 0.3.0 |
-| ember-cropperjs | 462,722 | 4,920 | 2022-12-15 | 0.9.6 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-in-viewport | 213,632 | 2022-11-09 | 4.1.0 |
+| ember-buffered-proxy | 131,064 | 2022-05-11 | 2.1.1 |
+| ember-short-number | 64,615 | 2022-04-30 | 2.0.0 |
+| active-model-adapter | 55,611 | 2022-10-23 | 4.0.1 |
+| ember-resize-observer-service | 46,977 | 2022-05-28 | 1.1.0 |
+| ember-app-scheduler | 43,661 | 2022-01-29 | 7.0.1 |
+| ember-toggle | 39,883 | 2022-02-02 | 9.0.3 |
+| ember-angle-bracket-invocation-polyfill | 38,859 | 2022-05-18 | 3.0.2 |
+| ember-tag-input | 28,288 | 2022-10-30 | 3.1.0 |
+| ember-component-css | 27,841 | 2022-05-09 | 0.8.1 |
+| ember-cli-build-notifications | 27,807 | 2022-12-30 | 2.0.0 |
+| ember-websockets | 16,125 | 2022-05-23 | 10.2.1 |
+| ember-useragent | 15,226 | 2022-03-01 | 0.12.0 |
+| ember-cli-browser-navigation-button-test-helper | 10,126 | 2022-02-26 | 0.3.0 |
+| ember-cropperjs | 4,920 | 2022-12-15 | 0.9.6 |
 
 **2023**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| @ember-data/canary-features | 50,459,823 | 260,167 | 2023-02-27 | 4.11.3 |
-| @ember-data/record-data | 46,618,128 | 250,195 | 2023-02-27 | 4.11.3 |
-| ember-table | 10,029,222 | 48,353 | 2023-07-30 | 5.0.6 |
-| ember-arg-types | 8,765,289 | 47,630 | 2023-08-22 | 1.1.0 |
-| layout-bin-packer | 5,898,960 | 46,646 | 2023-09-23 | 2.0.0 |
-| ember-collection | 5,554,269 | 46,156 | 2023-11-01 | 3.0.0 |
-| ember-on-resize-modifier | 12,984,327 | 45,290 | 2023-03-24 | 2.0.2 |
-| @storybook/ember-cli-storybook | 522,400 | 25,934 | 2023-08-16 | 0.6.1 |
-| ember-cli-bundle-analyzer | 366,499 | 24,734 | 2023-02-08 | 1.0.0 |
-| ember-data-copyable | 452,650 | 13,989 | 2023-12-22 | 1.3.1 |
-| @mainmatter/ember-api-actions | 499,536 | 5,921 | 2023-03-08 | 0.6.0 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| @ember-data/canary-features | 260,167 | 2023-02-27 | 4.11.3 |
+| @ember-data/record-data | 250,195 | 2023-02-27 | 4.11.3 |
+| ember-table | 48,353 | 2023-07-30 | 5.0.6 |
+| ember-arg-types | 47,630 | 2023-08-22 | 1.1.0 |
+| layout-bin-packer | 46,646 | 2023-09-23 | 2.0.0 |
+| ember-collection | 46,156 | 2023-11-01 | 3.0.0 |
+| ember-on-resize-modifier | 45,290 | 2023-03-24 | 2.0.2 |
+| @storybook/ember-cli-storybook | 25,934 | 2023-08-16 | 0.6.1 |
+| ember-cli-bundle-analyzer | 24,734 | 2023-02-08 | 1.0.0 |
+| ember-data-copyable | 13,989 | 2023-12-22 | 1.3.1 |
+| @mainmatter/ember-api-actions | 5,921 | 2023-03-08 | 0.6.0 |
 
 **2024**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-cli-code-coverage | 45,195,219 | 277,477 | 2024-09-24 | 3.1.0 |
-| ember-classic-import-meta-glob | 3,160,080 | 66,267 | 2024-11-20 | 0.1.1 |
-| ember-href-to | 9,056,871 | 51,065 | 2024-09-13 | 5.0.6 |
-| ember-local-storage | 8,013,258 | 44,562 | 2024-02-06 | 2.0.7 |
-| ember-cli-addon-docs-yuidoc | 7,600,068 | 37,136 | 2024-02-22 | 1.1.0 |
-| @ember-intl/cp-validations | 1,108,025 | 24,246 | 2024-07-10 | 7.0.2 |
-| ember-array-contains-helper | 353,464 | 17,303 | 2024-01-03 | 3.0.0 |
-| ember-user-activity | 1,049,065 | 16,064 | 2024-12-04 | 8.0.1 |
-| ember-hbs-minifier | 675,085 | 14,327 | 2024-11-15 | 1.3.0 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-cli-code-coverage | 277,477 | 2024-09-24 | 3.1.0 |
+| ember-classic-import-meta-glob | 66,267 | 2024-11-20 | 0.1.1 |
+| ember-href-to | 51,065 | 2024-09-13 | 5.0.6 |
+| ember-local-storage | 44,562 | 2024-02-06 | 2.0.7 |
+| ember-cli-addon-docs-yuidoc | 37,136 | 2024-02-22 | 1.1.0 |
+| @ember-intl/cp-validations | 24,246 | 2024-07-10 | 7.0.2 |
+| ember-array-contains-helper | 17,303 | 2024-01-03 | 3.0.0 |
+| ember-user-activity | 16,064 | 2024-12-04 | 8.0.1 |
+| ember-hbs-minifier | 14,327 | 2024-11-15 | 1.3.0 |
 
 **2025**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-test-selectors | 68,929,200 | 507,151 | 2025-04-09 | 7.1.0 |
-| ember-try | 59,304,951 | 319,640 | 2025-03-07 | 4.0.0 |
-| ember-wormhole | 43,204,311 | 224,588 | 2025-08-07 | 0.6.1 |
-| ember-svg-jar | 31,993,848 | 152,971 | 2025-11-07 | 2.7.1 |
-| ember-cp-validations | 20,507,670 | 147,281 | 2025-04-17 | 7.0.0 |
-| ember-cli-showdown | 14,535,603 | 135,770 | 2025-09-26 | 9.0.2 |
-| ember-tooltips | 20,393,172 | 123,008 | 2025-06-03 | 4.0.0 |
-| ember-cli-clipboard | 19,339,614 | 122,288 | 2025-03-15 | 1.3.0 |
-| ember-modal-dialog | 16,478,775 | 96,983 | 2025-12-08 | 5.0.0 |
-| torii | 8,649,252 | 94,687 | 2025-08-07 | 1.0.0 |
-| ember-ref-bucket | 12,355,749 | 80,326 | 2025-03-06 | 5.0.8 |
-| ember-bootstrap | 11,219,427 | 63,722 | 2025-11-26 | 6.7.0 |
-| ember-feature-flags | 6,805,755 | 49,117 | 2025-02-22 | 8.0.0 |
-| ember-classy-page-object | 1,080,439 | 44,255 | 2025-01-06 | 0.8.0 |
-| ember-metrics | 12,448,917 | 42,256 | 2025-02-27 | 2.0.0 |
-| ember-collapsible-panel | 5,801,346 | 41,731 | 2025-07-03 | 6.1.1 |
-| @percy/ember | 10,681,317 | 40,946 | 2025-07-28 | 5.0.0 |
-| ember-drag-sort | 904,077 | 34,968 | 2025-10-23 | 4.2.0 |
-| ember-qunit-nice-errors | 418,503 | 34,349 | 2025-08-01 | 2.0.0 |
-| ember-popper-modifier | 496,550 | 22,021 | 2025-03-19 | 4.1.1 |
-| ember-froala-editor | 593,310 | 15,162 | 2025-11-19 | 4.7.1 |
-| ember-apollo-client | 358,165 | 13,598 | 2025-08-20 | 5.0.0 |
-| ember-cli-fastboot-testing | 451,245 | 10,330 | 2025-12-03 | 0.7.0 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-test-selectors | 507,151 | 2025-04-09 | 7.1.0 |
+| ember-try | 319,640 | 2025-03-07 | 4.0.0 |
+| ember-wormhole | 224,588 | 2025-08-07 | 0.6.1 |
+| ember-svg-jar | 152,971 | 2025-11-07 | 2.7.1 |
+| ember-cp-validations | 147,281 | 2025-04-17 | 7.0.0 |
+| ember-cli-showdown | 135,770 | 2025-09-26 | 9.0.2 |
+| ember-tooltips | 123,008 | 2025-06-03 | 4.0.0 |
+| ember-cli-clipboard | 122,288 | 2025-03-15 | 1.3.0 |
+| ember-modal-dialog | 96,983 | 2025-12-08 | 5.0.0 |
+| torii | 94,687 | 2025-08-07 | 1.0.0 |
+| ember-ref-bucket | 80,326 | 2025-03-06 | 5.0.8 |
+| ember-bootstrap | 63,722 | 2025-11-26 | 6.7.0 |
+| ember-feature-flags | 49,117 | 2025-02-22 | 8.0.0 |
+| ember-classy-page-object | 44,255 | 2025-01-06 | 0.8.0 |
+| ember-metrics | 42,256 | 2025-02-27 | 2.0.0 |
+| ember-collapsible-panel | 41,731 | 2025-07-03 | 6.1.1 |
+| @percy/ember | 40,946 | 2025-07-28 | 5.0.0 |
+| ember-drag-sort | 34,968 | 2025-10-23 | 4.2.0 |
+| ember-qunit-nice-errors | 34,349 | 2025-08-01 | 2.0.0 |
+| ember-popper-modifier | 22,021 | 2025-03-19 | 4.1.1 |
+| ember-froala-editor | 15,162 | 2025-11-19 | 4.7.1 |
+| ember-apollo-client | 13,598 | 2025-08-20 | 5.0.0 |
+| ember-cli-fastboot-testing | 10,330 | 2025-12-03 | 0.7.0 |
 
 **2026**
 
-| Name | Downloads/2y | Downloads/month | Last Published | Latest Version |
-|------|-----------|-----------------|----------------|----------------|
-| ember-exam | 57,838,581 | 455,320 | 2026-02-17 | 10.1.0 |
-| ember-data-model-fragments | 12,204,477 | 109,932 | 2026-02-27 | 7.0.3 |
-| ember-engines | 11,699,199 | 59,848 | 2026-02-25 | 0.13.1 |
-| ember-freestyle | 693,137 | 25,546 | 2026-03-22 | 0.23.0 |
-| ember-bootstrap-power-select | 1,390,068 | 6,292 | 2026-03-06 | 6.1.0 |
+| Name | Downloads/month | Last Published | Latest Version |
+|------|-----------------|----------------|----------------|
+| ember-exam | 455,320 | 2026-02-17 | 10.1.0 |
+| ember-data-model-fragments | 109,932 | 2026-02-27 | 7.0.3 |
+| ember-engines | 59,848 | 2026-02-25 | 0.13.1 |
+| ember-freestyle | 25,546 | 2026-03-22 | 0.23.0 |
+| ember-bootstrap-power-select | 6,292 | 2026-03-06 | 6.1.0 |
 
 </details>
 
@@ -1263,18 +1246,7 @@ Last published breakdown:
 
 </summary>
 
-Last published breakdown: 
-2016: 4, 
-2017: 7, 
-2018: 14, 
-2019: 16, 
-2020: 11, 
-2021: 14, 
-2022: 11, 
-2023: 7, 
-2024: 7, 
-2025: 6, 
-2026: 7, 
+Last published breakdown: 2016: 4, 2017: 7, 2018: 14, 2019: 16, 2020: 11, 2021: 14, 2022: 11, 2023: 7, 2024: 7, 2025: 6, 2026: 7, Other: 2
 
 **2016**
 
@@ -1441,6 +1413,8 @@ Last published breakdown:
 |----------------|----------------|-----|
 | ember-cli-deploy* | — |  |
 | *broccoli-** | — |  |
+
+
 
 </details>
 
