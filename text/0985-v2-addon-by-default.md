@@ -21,7 +21,7 @@ This RFC proposes making [`@ember/addon-blueprint`](https://github.com/ember-cli
 
 ## Motivation
 
-The current default v1 addon blueprint generates addons that get rebuilt by every consuming app, which is slow and couples addon builds to app builds. There is no built-in path to modern tooling like TypeScript, Glint, or Vite.
+The current default v1 addon blueprint generates addons that get rebuilt by every consuming app, which is slow and couples addon builds to app builds. There is no built-in path to modern tooling like TypeScript, Glint, or Vite. The app blueprint already defaults to a modern Vite-based setup, so the addon blueprint is out of parity -- new addon authors get a significantly worse starting experience than new app authors.
 
 `@ember/addon-blueprint` already exists and has been widely adopted by the community. Making it the default gives new addon authors a working setup with single-package structure, Glint for template type safety, native classes and strict mode throughout, and sensible tooling defaults out of the box.
 
@@ -82,7 +82,7 @@ my-addon/
 └── addon-main.cjs                    # V1 compat shim
 ```
 
-**Why single-package by default**: Most addons don't need a monorepo. Single-package is simpler to maintain and publish. Advanced users can still set up monorepos.
+**Why single-package by default**: The earlier community v2 addon blueprint (`@embroider/addon-blueprint`) required a monorepo with separate `addon` and `test-app` packages. This was necessary at the time because of build tooling constraints, but the added complexity was a significant barrier to adoption -- especially for authors of simple addons. Now that Vite and `ember-strict-application-resolver` allow tests and a demo app to live in the same package, a single-package structure is simpler to maintain, easier to publish, and sufficient for most addons. Advanced users who need multiple test apps or a documentation site can still set up monorepos.
 
 **Why dual build systems**: Vite gives fast dev rebuilds and HMR. Rollup gives optimized, tree-shaken production output. Tests run entirely through Vite, no webpack or `ember-auto-import` needed.
 
@@ -785,6 +785,8 @@ Existing addons are unaffected. New addons get the new blueprint automatically. 
 
 The blueprint includes `config/ember-cli-update.json` so that `ember-cli-update` continues to work. This file tracks the blueprint package name and version, allowing `ember-cli-update` to detect available updates and apply them. The entry should reference `@ember/addon-blueprint` and the version used to generate the addon, following the same pattern used by the app blueprint.
 
+Note that there will be a version boundary across which `ember-cli-update` cannot automatically migrate. Addons generated with the old v1 blueprint cannot be automatically updated to the new `@ember/addon-blueprint` via `ember-cli-update` -- the project structures are too different. Similar to how apps needed to reach a specific ember-cli version before `ember-cli-update` could bridge to the Vite-based app blueprint, addon authors will need to do a one-time manual migration (or use a codemod, once available) to get onto the new blueprint. Once on the new blueprint, `ember-cli-update` will work normally for subsequent updates.
+
 #### Codemod
 
 A codemod for migrating existing v1 addons to the new blueprint structure is out of scope for this RFC, but would be a valuable follow-up effort. [Mainmatter](https://mainmatter.com/) has expressed interest in developing such a codemod. In the meantime, addon authors can generate a fresh project with the new blueprint and manually move their source code into it. The [embroider-build/embroider](https://github.com/embroider-build/embroider) repo also has documentation on how to work with and migrate to v2 addons.
@@ -797,6 +799,21 @@ A codemod for migrating existing v1 addons to the new blueprint structure is out
 - The blueprint README covers customization, publishing, and multi-version support
 - Provide migration guides for v1 and v2 addon authors
 - The blueprint should generate parallel `.md` files (or inline comments) alongside config files to explain the purpose and rationale of each configuration. This helps addon authors understand *why* a config exists, not just *what* it contains, and reduces confusion when configs change across blueprint versions
+- Review the existing Ember Guides to identify workflows that won't work with the new blueprint and document alternatives
+
+### ember-cli Generators
+
+The new blueprint does not include `ember-cli` as a dependency. This means commands like `ember generate component foo` will not work out of the box in a v2 addon:
+
+```
+# pnpm dlx ember-cli g component foo
+
+You have to be inside an ember-cli project to use the generate command.
+```
+
+This is expected behavior. The v2 addon blueprint uses a `src/` directory structure that doesn't match the classic `addon/` layout that ember-cli generators target. Addon authors should create files manually in `src/` or use editor snippets. The existing Ember Guides should be updated to document this difference and provide guidance on the new file creation workflow for v2 addons.
+
+In the future, ember-cli generators could be updated to understand v2 addon structures, or alternative code generation tooling could be provided. This is not a blocker for this RFC but should be tracked as follow-up work.
 
 ### Key Concepts for Addon Authors
 
