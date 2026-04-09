@@ -777,6 +777,19 @@ In short:
 - the blueprint can have any number of major/minors between ember-cli versions, which is fine, because at the next ember-cli release, we set the current blueprint version
 
 
+### Non-Built Addons
+
+The blueprint should support a flag (e.g. `--no-build`) that generates a simpler addon intended for local/workspace use rather than publishing to npm. A non-built addon skips the publish-time build entirely -- `exports` points at source files, and the consuming app's build tooling (Vite/Embroider) handles transpilation.
+
+This variant drops a significant chunk of devDependencies and config files that only exist to support the publish build:
+
+- No Rollup, no `rollup.config.mjs`
+- No `babel.publish.config.cjs` or `tsconfig.publish.json`
+- No `prepack` script, no `dist/` or `declarations/` directories
+- No `files` array (not publishing to npm)
+
+The exact flag name and implementation are details of the addon-blueprint itself, not this RFC. The important thing is that the blueprint provides a first-class path for this use case, since local/workspace addons that don't need their own build are common and should not require manually stripping down a full publishable addon scaffold.
+
 ### Migration
 
 Existing addons are unaffected. New addons get the new blueprint automatically. Existing addons can migrate by generating a new project and copying relevant files, or using `npx ember-cli@latest addon <name> --blueprint @ember/addon-blueprint`.
