@@ -917,7 +917,7 @@ The consuming app's build tooling (Vite/Embroider) handles the transpilation. Th
 
 ### Resources
 
-- [@ember/addon-blueprint README](https://github.com/emberjs/ember-addon-blueprint#readme)
+- [@ember/addon-blueprint README](https://github.com/ember-cli/ember-addon-blueprint#readme)
 - [Addon Author Guide](https://github.com/embroider-build/embroider/blob/main/docs/addon-author-guide.md)
 - [Porting Addons to V2](https://github.com/embroider-build/embroider/blob/main/docs/porting-addons-to-v2.md)
 - [Node.js Package Exports](https://nodejs.org/api/packages.html#exports)
