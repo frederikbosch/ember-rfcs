@@ -925,6 +925,17 @@ Key differences from a published addon:
 
 The consuming app's build tooling (Vite/Embroider) handles the transpilation. This is much simpler to maintain for workspace-internal code.
 
+#### In-Repo Addons
+
+Classic in-repo addons (the `lib/` directory pattern) are v1 constructs. To create the v2 equivalent, use your package manager's workspace features to establish them as real package dependencies:
+
+1. Create a directory for the addon (e.g. `packages/my-internal-addon/` or keep `lib/my-internal-addon/`)
+2. Give it a `package.json` with `ember-addon.version: 2`
+3. Add it to your workspace configuration (e.g. pnpm `workspace.yaml` or `package.json` `"workspaces"`)
+4. Install it as a dependency of the consuming app
+
+These in-repo addons will typically be "unbuilt" -- they point `exports` at source files as described in the Unpublished Addons section above. This avoids the need for a separate build step while still giving you proper package boundaries and clean imports. The consuming app's Vite/Embroider build handles all transpilation.
+
 #### Publishing
 
 1. Write code in `src/`, tests with `#src/*` imports
