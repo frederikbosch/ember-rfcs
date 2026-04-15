@@ -25,6 +25,18 @@ The current default v1 addon blueprint generates addons that get rebuilt by ever
 
 `@ember/addon-blueprint` already exists and has been widely adopted by the community. Making it the default gives new addon authors a working setup with single-package structure, Glint for template type safety, native classes and strict mode throughout, and sensible tooling defaults out of the box.
 
+Goals:
+- The new blueprint should :
+  - emit browser-code by default (engines / node doesn't matter)
+  - use standard ecosystem tooling with broad support
+  - be familiar / easy to test / make demo apps with
+  - document and explain how the npm packaging process works, and what concerns someone publishing a package needs to be aware of
+  - have escape hatches / configuration for folks who don't need everything that a publisher would need
+  - compose within monoreppos
+
+> [!NOTE]
+> the point about publishing concerns could be the most contentious, as some folks feel we have too many config files. And while there are more than a v1 addon, they are _needed_ when your develop and publish environments/targets are different. More on that later.
+
 ## Detailed design
 
 ### Definitions
@@ -35,7 +47,12 @@ The current default v1 addon blueprint generates addons that get rebuilt by ever
 
 **Blueprint**: A code generation template used by ember-cli to scaffold projects.
 
-### Blueprint Structure
+
+### Sample Blueprint Structure
+
+> [!NOTE]
+> Blueprints are living artifacts -- the specific file contents shown below will evolve over time. This RFC focuses on the **design goals and architectural rationale** behind the configurations, not the exact file contents. The blueprint repository is the source of truth for current output. We may even migrate away from all of the tools listed here in the future. 
+
 
 ```
 my-addon/
@@ -91,7 +108,7 @@ my-addon/
 ### Package Configuration
 
 > [!NOTE]
-> Blueprints are living artifacts -- the specific file contents shown below will evolve over time. This RFC focuses on the **design goals and architectural rationale** behind the configurations, not the exact file contents. The blueprint repository is the source of truth for current output.
+> Blueprints are living artifacts -- the specific file contents shown below will evolve over time. This RFC focuses on the **design goals and architectural rationale** behind the configurations, not the exact file contents. The blueprint repository is the source of truth for current output. We may even migrate away from all of the tools listed here in the future. 
 
 <details><summary>package.json</summary>
 
