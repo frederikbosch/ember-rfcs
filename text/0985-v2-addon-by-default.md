@@ -65,7 +65,7 @@ A codemod for migrating existing v1 addons to the new blueprint structure is out
 
 ### Documentation Updates
 
-- Update the Ember Guides and CLI docs to reference the new blueprint
+- Update the Ember Guides to reference the new blueprint
 - The blueprint README covers customization, publishing, and multi-version support
 - Provide migration guides for v1 and v2 addon authors
 - The blueprint should generate parallel `.md` files (or inline comments) alongside config files to explain the purpose and rationale of each configuration. This helps addon authors understand *why* a config exists, not just *what* it contains, and reduces confusion when configs change across blueprint versions
