@@ -271,15 +271,7 @@ _We are going to commit adding generators, but not with ember-cli_.
 
 ### Streamlining migration for large, complex v1/v2 addons
 
-Migration can either be done via a codemod (Mainmatter has expressed interest in developing one) or via a manual process:
-
-1. **Move to pnpm.** This simplifies workspace and dependency management for the remaining steps.
-2. **Convert to a single-package monorepo.** Set up pnpm workspaces so the addon is a workspace package.
-3. **Extract the docs to a "docs app."** Move any documentation or dummy app content into a separate `docs-app` package in the monorepo, and add its tests to CI.
-4. **Extract the tests to a "test app."** Move the addon's tests into a separate `test-app` package in the monorepo, and add it to CI as well.
-5. **Move `addon/` and `test-support/` to a temporary location.** Move these folders to a sub-folder or other temporary location so you can generate a fresh addon in place.
-6. **Generate a new addon at the desired location.** Use `ember init --blueprint @ember/addon-blueprint` (to generate in the current directory) or `ember addon addon-name --blueprint @ember/addon-blueprint` (to start fresher in a new directory -- sometimes easier). Then copy the files from `addon/` and `test-support/` from their temporary homes into the new addon's `src/` directory. This involves changing all internal imports to relative paths, and they must use file extensions. Generating from `@ember/addon-blueprint` also gives maintainers the opportunity to re-test private functions and internal behaviors -- especially useful if any of those tests had to be disabled during step 4.
-7. **Publish a major version.** This is a breaking change because consumers now need `ember-auto-import` v2, Embroider, or Vite to use the addon.
+Migration can either be done via a codemod (Mainmatter has expressed interest in developing one) or via a manual process.
 
 ## Appendix, related information, goals, direction
 
