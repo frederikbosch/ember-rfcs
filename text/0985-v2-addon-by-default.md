@@ -259,6 +259,7 @@ These in-repo addons will typically be "unbuilt" -- they point `exports` at sour
 - Provide multiple blueprints (maintenance burden, confusion)
   - this is slightly addressed by documenting how to compose blueprints for differentt workflows, like having multiple test apps, for example.
 - we can make hbs work without ts support
+  - or we can document how to hand-roll types for these
 
 ## Unresolved questions
 
