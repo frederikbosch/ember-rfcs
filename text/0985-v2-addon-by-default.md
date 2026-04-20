@@ -156,13 +156,16 @@ Macros are evaluated in dev for testing but left unevaluated in published output
 
 #### Monorepo Setup
 
+
 The single-package default works for most addons. If you need a monorepo (complex integration testing, multiple related packages, full documentation app):
 
+> [!NOTE]
+> This is an example monorepo setup, and may differ from what your monorepo. Some addons may want _multiple_ test-apps for various configurations / build setups.
+
 1. Generate addon: `npx ember-cli@latest addon my-addon --blueprint @ember/addon-blueprint --skip-git`
-2. Remove generated test infrastructure
-3. Generate test app: `npx ember-cli@latest app test-app --blueprint @ember/app-blueprint`
-4. Set up workspace tooling (pnpm/yarn workspaces)
-5. Install addon in test app
+2. Generate test app: `npx ember-cli@latest app test-app --blueprint @ember/app-blueprint`
+3. Set up workspace tooling (pnpm workspaces)
+4. Install addon in test app
 
 #### Unpublished Addons in a Monorepo
 
