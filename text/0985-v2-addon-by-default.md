@@ -47,30 +47,6 @@ Goals:
 
 **Blueprint**: A code generation template used by ember-cli to scaffold projects.
 
-### Influence on Future App Blueprint
-
-The test setup here is a proof-of-concept for future compat-less Ember apps:
-
-- A minimal Ember app running on Vite with no webpack or `ember-cli-build.js`
-- Bootstrap with just `EmberApp` and `EmberRouter` -- no complex build pipeline
-- ES modules and `import.meta.glob` for module discovery instead of AMD/requirejs
-- Direct framework API usage instead of ember-cli abstractions
-
-This validates that Ember apps can run well on modern build tools, pointing toward simpler app blueprints in the future.
-
-### Non-Built Addons
-
-The blueprint should support a flag (e.g. `--no-build`) that generates a simpler addon intended for local/workspace use rather than publishing to npm. A non-built addon skips the publish-time build entirely -- `exports` points at source files, and the consuming app's build tooling (Vite/Embroider) handles transpilation.
-
-This variant drops a significant chunk of devDependencies and config files that only exist to support the publish build:
-
-- No Rollup, no `rollup.config.mjs`
-- No `babel.publish.config.cjs` or `tsconfig.publish.json`
-- No `prepack` script, no `dist/` or `declarations/` directories
-- No `files` array (not publishing to npm)
-
-The exact flag name and implementation are details of the addon-blueprint itself, not this RFC. The important thing is that the blueprint provides a first-class path for this use case, since local/workspace addons that don't need their own build are common and should not require manually stripping down a full publishable addon scaffold.
-
 ### Migration
 
 Existing addons are unaffected. New addons get the new blueprint automatically. Existing addons can migrate by generating a new project and copying relevant files, or using `npx ember-cli@latest addon <name> --blueprint @ember/addon-blueprint`.
@@ -289,3 +265,25 @@ Migration can either be done via a codemod (Mainmatter has expressed interest in
 5. **Move `addon/` and `test-support/` to a temporary location.** Move these folders to a sub-folder or other temporary location so you can generate a fresh addon in place.
 6. **Generate a new addon at the desired location.** Use `ember init --blueprint @ember/addon-blueprint` (to generate in the current directory) or `ember addon addon-name --blueprint @ember/addon-blueprint` (to start fresher in a new directory -- sometimes easier). Then copy the files from `addon/` and `test-support/` from their temporary homes into the new addon's `src/` directory. This involves changing all internal imports to relative paths, and they must use file extensions. Generating from `@ember/addon-blueprint` also gives maintainers the opportunity to re-test private functions and internal behaviors -- especially useful if any of those tests had to be disabled during step 4.
 7. **Publish a major version.** This is a breaking change because consumers now need `ember-auto-import` v2, Embroider, or Vite to use the addon.
+
+## Appendix, related information, goals, direction
+
+### Influence on Future App Blueprint
+
+The test setup here could be a proof-of-concept for future compat-less Ember apps:
+
+- A minimal Ember app running on Vite with no webpack or `ember-cli-build.js`
+- Bootstrap with just `EmberApp` and `EmberRouter` -- no complex build pipeline
+- ES modules and `import.meta.glob` for module discovery instead of AMD/requirejs
+- Direct framework API usage instead of ember-cli abstractions
+
+This validates that Ember apps can run well on modern build tools, pointing toward simpler app blueprints in the future.
+
+### Non-Built Addons
+
+The blueprint should support a flag (e.g. `--no-build`) that generates a simpler addon intended for local/workspace use rather than publishing to npm. A non-built addon skips the publish-time build entirely -- `exports` points at source files, and the consuming app's build tooling (Vite/Embroider) handles transpilation.
+
+This variant drops a significant chunk of devDependencies and config files that only exist to support the publish build.
+
+The exact flag name and implementation are details of the addon-blueprint itself, not this RFC. The important thing is that the blueprint provides a first-class path for this use case, since local/workspace addons that don't need their own build are common and should not require manually stripping down a full publishable addon scaffold.
+
