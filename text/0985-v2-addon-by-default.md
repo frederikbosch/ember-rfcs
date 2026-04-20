@@ -253,9 +253,6 @@ These in-repo addons will typically be "unbuilt" -- they point `exports` at sour
 - we can make hbs work without ts support
   - or we can document how to hand-roll types for these
 
-## Unresolved questions
-
-- How to best support advanced monorepo setups in the future.
 
 ## Previously unresolved questions
 
