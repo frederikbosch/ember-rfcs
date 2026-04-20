@@ -61,17 +61,14 @@ Note that there will be a version boundary across which `ember-cli-update` canno
 
 A codemod for migrating existing v1 addons to the new blueprint structure is out of scope for this RFC, but would be a valuable follow-up effort. [Mainmatter](https://mainmatter.com/) has expressed interest in developing such a codemod. In the meantime, addon authors can generate a fresh project with the new blueprint and manually move their source code into it. The [embroider-build/embroider](https://github.com/embroider-build/embroider) repo also has documentation on how to work with and migrate to v2 addons.
 
-## How we teach this
 
-### Documentation Updates
+### In-repo addons
 
-- Update the Ember Guides to reference the new blueprint
-- The blueprint README covers customization, publishing, and multi-version support
-- Provide migration guides for v1 and v2 addon authors
-- The blueprint should generate parallel `.md` files (or inline comments) alongside config files to explain the purpose and rationale of each configuration. This helps addon authors understand *why* a config exists, not just *what* it contains, and reduces confusion when configs change across blueprint versions
-- Review the existing Ember Guides to identify workflows that won't work with the new blueprint and document alternatives
+_Proper_ in-repo addons, are not going to be supported with this blueprint.
 
-### ember-cli Generators
+`ember-cli` will throw an error _unless_ the user explicitly opts in to tho old blueprint. 
+
+### Generators
 
 The new blueprint does not include `ember-cli` as a dependency. This means commands like `ember generate component foo` will not work out of the box in a v2 addon:
 
@@ -81,9 +78,24 @@ The new blueprint does not include `ember-cli` as a dependency. This means comma
 You have to be inside an ember-cli project to use the generate command.
 ```
 
-This is expected behavior. The v2 addon blueprint uses a `src/` directory structure that doesn't match the classic `addon/` layout that ember-cli generators target. Addon authors should create files manually in `src/` or use editor snippets. The existing Ember Guides should be updated to document this difference and provide guidance on the new file creation workflow for v2 addons.
+_v2 addons are not ember-cli projects_.
 
-In the future, ember-cli generators could be updated to understand v2 addon structures, or alternative code generation tooling could be provided. This is not a blocker for this RFC but should be tracked as follow-up work.
+> [!IMPORTANT]
+> This is expected behavior, however before we mark this "v2 addon by default" project as "ready for release", we'll want _some way_ to help folks generate files. 
+
+The v2 addon blueprint uses a `src/` directory structure that doesn't match the classic `addon/` layout that ember-cli generators target. Addon authors could create files manually in `src/` or use editor snippets -- and once authors are familiar enough with how their addon works, this may be easier than using generators (you stay in your editor). 
+
+
+
+## How we teach this
+
+### Documentation Updates
+
+- Update the Ember Guides to reference the new blueprint
+- The blueprint README covers customization, publishing, and multi-version support
+- Provide migration guides for v1 and v2 addon authors
+- The blueprint should generate parallel `.md` files (or inline comments) alongside config files to explain the purpose and rationale of each configuration. This helps addon authors understand *why* a config exists, not just *what* it contains, and reduces confusion when configs change across blueprint versions
+- Review the existing Ember Guides to identify workflows that won't work with the new blueprint and document alternatives
 
 ### Key Concepts for Addon Authors
 
