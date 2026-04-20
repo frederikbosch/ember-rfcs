@@ -185,8 +185,8 @@ Sometimes you have a v2 addon in a monorepo that's only consumed by other packag
       "default": "./src/index.ts"
     },
     "./*": {
-      "types": "./src/*.ts",
-      "default": "./src/*.ts"
+      "types": "./src/*",
+      "default": "./src/*"
     }
   }
 }
