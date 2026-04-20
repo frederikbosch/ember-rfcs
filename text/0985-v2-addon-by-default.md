@@ -89,6 +89,9 @@ In the future, ember-cli generators could be updated to understand v2 addon stru
 
 #### `exports` and `imports`
 
+> [!NOTE]
+> This may look more complicated than v1 addons, but this is what the wider ecosystem is doing, and a lot of tooling knows to look at these package.json configs, and we'll benefit from that tooling.
+
 `exports` defines your addon's public API:
 
 ```json
