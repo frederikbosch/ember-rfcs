@@ -271,7 +271,7 @@ _We are going to commit adding generators, but not with ember-cli_.
 
 ### Migration?
 
-Migration can either be done via a codemod (Mainmatter has expressed interest in developing one) or via a manual process.
+The majority of this RFC is written from the perspective of someone that is running ember new for the first time on a brand new addon, but we will need to make sure to write both upgrade guides and appropriate codemods for anyone that is wanting to upgrade their addons from the old blueprints to this new default. We also need to put some consideration into the experience of people using `ember-cli-update` to upgrade when we make this the new default. 
 
 ## Appendix, related information, goals, direction
 
