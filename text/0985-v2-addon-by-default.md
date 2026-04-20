@@ -49,7 +49,7 @@ Goals:
 
 ### Migration
 
-Existing addons are unaffected. New addons get the new blueprint automatically. Existing addons can migrate by generating a new project and copying relevant files, or using `npx ember-cli@latest addon <name> --blueprint @ember/addon-blueprint`.
+The majority of this RFC is written from the perspective of someone that is running ember new for the first time on a brand new addon, but we will need to make sure to write both upgrade guides and appropriate codemods for anyone that is wanting to upgrade their addons from the old blueprints to this new default. We also need to put some consideration into the experience of people using `ember-cli-update` to upgrade when we make this the new default. 
 
 #### `ember-cli-update` Support
 
@@ -253,25 +253,6 @@ These in-repo addons will typically be "unbuilt" -- they point `exports` at sour
 - we can make hbs work without ts support
   - or we can document how to hand-roll types for these
 
-
-## Previously unresolved questions
-
-### Generators?
-
-ember-cli is not included in the v2 addon blueprint (intentionally).
-At present, we error with:
-```
-# pnpm dlx ember-cli g component foo
-
-You have to be inside an ember-cli project to use the generate command.
-```
-Which is a good error, because ember-cli is not in the v2 addon blueprint.
-
-_We are going to commit adding generators, but not with ember-cli_.
-
-### Migration?
-
-The majority of this RFC is written from the perspective of someone that is running ember new for the first time on a brand new addon, but we will need to make sure to write both upgrade guides and appropriate codemods for anyone that is wanting to upgrade their addons from the old blueprints to this new default. We also need to put some consideration into the experience of people using `ember-cli-update` to upgrade when we make this the new default. 
 
 ## Appendix, related information, goals, direction
 
