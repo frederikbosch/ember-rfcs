@@ -83,8 +83,6 @@ _v2 addons are not ember-cli projects_.
 > [!IMPORTANT]
 > This is expected behavior, however before we mark this "v2 addon by default" project as "ready for release", we'll want _some way_ to help folks generate files. 
 
-The v2 addon blueprint uses a `src/` directory structure that doesn't match the classic `addon/` layout that ember-cli generators target. Addon authors could create files manually in `src/` or use editor snippets -- and once authors are familiar enough with how their addon works, this may be easier than using generators (you stay in your editor). 
-
 
 
 ## How we teach this
