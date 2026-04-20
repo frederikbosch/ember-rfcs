@@ -250,6 +250,7 @@ These in-repo addons will typically be "unbuilt" -- they point `exports` at sour
 - Some advanced use cases (monorepos, custom builds) need additional configuration.
 - Addon authors unfamiliar with TypeScript/Glint face a learning curve, but JavaScript is fully supported.
 - The blueprint is opinionated, but covers the vast majority of use cases.
+- hbs is not supported in addons (it's not possible to use Glint 2 with hbs)
 
 ## Alternatives
 
@@ -257,6 +258,7 @@ These in-repo addons will typically be "unbuilt" -- they point `exports` at sour
 - Default to monorepo (too complex for most users (and maintainers of the bluleprints, as it turns out))
 - Provide multiple blueprints (maintenance burden, confusion)
   - this is slightly addressed by documenting how to compose blueprints for differentt workflows, like having multiple test apps, for example.
+- we can make hbs work without ts support
 
 ## Unresolved questions
 
