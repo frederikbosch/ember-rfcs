@@ -267,6 +267,8 @@ You have to be inside an ember-cli project to use the generate command.
 ```
 Which is a good error, because ember-cli is not in the v2 addon blueprint.
 
+_We are going to commit adding generators, but not with ember-cli_.
+
 ### Streamlining migration for large, complex v1/v2 addons
 
 Migration can either be done via a codemod (Mainmatter has expressed interest in developing one) or via a manual process:
