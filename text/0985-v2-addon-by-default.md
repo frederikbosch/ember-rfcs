@@ -152,6 +152,9 @@ import { myHelper } from './helpers/my-helper'; // yes
 import { myHelper } from 'my-addon/helpers/my-helper'; // no
 ```
 
+> [!NOTE]
+> self-imports _can_ work with custom export conditions coordinated between package.json, rollup, and vite configs.
+
 #### Dev vs. Publish Configs
 
 | Purpose | Dev | Publish |
