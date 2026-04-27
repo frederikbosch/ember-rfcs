@@ -142,7 +142,7 @@ import { myHelper } from 'my-addon/helpers/my-helper';
 - Requires `dist/` to exist (needs a build first)
 - Catches issues with `exports` mapping or build transforms
 
-**Recommendation**: Use `#src/*` imports test development. If you need to specifically test the published output, use consumer-style imports in a dedicated test file and run `npm run build` first.
+**Recommendation**: Use `#src/*` imports for _tests_ only. If you need to specifically test the published output, use consumer-style imports in a dedicated suite / app and run `npm run build` first.
 
 #### Self-Imports
 
