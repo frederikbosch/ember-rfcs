@@ -142,8 +142,6 @@ import { myHelper } from 'my-addon/helpers/my-helper';
 - Requires `dist/` to exist (needs a build first)
 - Catches issues with `exports` mapping or build transforms
 
-**Recommendation**: Use `#src/*` imports for _tests_ only. But not within `src`. If you need to specifically test the published output, use consumer-style imports in a dedicated suite / app and run `npm run build` first.
-
 #### Self-Imports
 
 Self-imports (e.g. `import { x } from 'my-addon/foo'`) don't work during development in `src/` files because they resolve through `exports` to `dist/`, which doesn't exist until you build. Use relative imports in `src/`:
