@@ -15,12 +15,12 @@ suite:
 
 ## Summary
 
-> Add a public method `Transition.waitFor` to the Ember Router and thereby supporting the new native
+Add a public method `Transition.waitFor` to the Ember Router and thereby supporting the new native
 ViewTransition API.
 
 ## Motivation
 
-> At the moment the router cannot await a promise when switching from the old route to the new one. In order 
+At the moment the router cannot await a promise when switching from the old route to the new one. In order 
 to implement the new browser native ViewTransition API you need the router's transition to happen during the 
 native view transition. The `waitFor` method allows the Ember router to pause its transition until the native
 view transition has finished its asynchronous `document.startViewTransition` call.
