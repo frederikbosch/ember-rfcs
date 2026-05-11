@@ -27,7 +27,7 @@ view transition has finished its asynchronous `document.startViewTransition` cal
 
 ## Detailed design
 
-Inside the `Transition` object inside the Ember Router a new method `waitFor` will be added.
+Inside the Ember Router package, the `Transition` object will receive a new method `waitFor`.
 
 ```ts
 waitFor(promise: Promise<any>) {
@@ -36,9 +36,9 @@ waitFor(promise: Promise<any>) {
 ```
 
 When called, the method will cause the transition to wait for the passed promise to resolve before
-continuing the transition. The promise awaited after the `routeWillChange` event and before the 
-`beforeModel` hook in the new route. This allows users to call the `waitFor` sinde `routeWillChange` 
-listeners.
+continuing the transition. The promise is awaited *after* the `routeWillChange` event is fired and 
+*before* the `beforeModel` hook in the new route is called. This allows users to call the `waitFor` 
+inside `routeWillChange` listeners.
 
 ```js
 router.on('routeWillChange', async (transition) => {
@@ -66,6 +66,7 @@ transition to pause. The router will continue entering the new route, even thoug
 as referred to above was not yet finished.
 
 ```js
+// although the callback is asynchronous, the router will continue anyhow
 router.on('routeWillChange', async (transition) => {
   const viewTransition = document.startViewTransition(async () => {
   });
@@ -74,12 +75,12 @@ router.on('routeWillChange', async (transition) => {
 ```
 
 An alternative solution to the `waitFor` method would be let the router await `routeWillChange` listeners. But
-with probably many listeners being used by current users, it is hard to foresee if this would possibly break
+with probably many listeners being used by current users, it is hard to foresee if this would break
 current applications. A new method allows users to opt-in to an asynchronous switch between old and new route.
 
 Finally, the `waitFor` accepts a single promise that replaces a possible other pausing promise. In the example 
 below only promise2 is waited for by the router. There is also no possibility to remove pausing promises. If 
-users would want to wait for multiple Promise, it could create an aggregate promise via `Promise.all()`.
+users would want to wait for multiple Promise, they have to create an aggregate promise via `Promise.all()`.
 
 ```js
 const { promise: promise1 } = Promise.withResolvers();
@@ -92,10 +93,11 @@ transition.waitFor(promise2);
 
 ## How we teach this
 
-Since animation libraries liquid-fire and Ember animated have always been popuplar within Ember, there should a 
-separate section inside the [Ember Routing guides](https://guides.emberjs.com/release/routing/). It should be
-a separate page View Transition between Asynchronous Routing and Controllers. The page should document how to
-use view transitions within Ember.
+Since animation libraries, like [liquid-fire](https://ember-animation.github.io/liquid-fire/) and 
+[Ember animated](https://ember-animation.github.io/ember-animated/), have always been popuplar within Ember, 
+there should a separate section inside the [Ember Routing guides](https://guides.emberjs.com/release/routing/). 
+It should be a separate page View Transition between Asynchronous Routing and Controllers. The page should 
+document how to use the View Transition API within Ember.
 
 ## Drawbacks
 
@@ -111,4 +113,4 @@ applications.
 
 ## Unresolved questions
 
-`waitFor` or `waitUntil`, I have chosen former but the method might reconsidered.
+`waitFor` or `waitUntil`, I have chosen former but the name of the method might reconsidered.
