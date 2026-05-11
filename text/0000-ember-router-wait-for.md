@@ -99,8 +99,9 @@ use view transitions within Ember.
 
 ## Drawbacks
 
-A drawback might be that there is a team considering replacing the current Ember Router with a new one. However,
-there is a need within the Ember community right now to implement view transitions in a non-hacky manner.
+A drawback might be that [a new Route Manager API](https://github.com/emberjs/rfcs/pull/1169) is considered that 
+might replace the current Ember Router with a new one. However, there is a need within the Ember community right 
+now to implement view transitions in a non-hacky manner.
 
 ## Alternatives
 
