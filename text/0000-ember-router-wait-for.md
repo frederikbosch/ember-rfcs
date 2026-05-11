@@ -29,7 +29,7 @@ view transition has finished its asynchronous `document.startViewTransition` cal
 
 Inside the `Transition` object inside the Ember Router a new method `waitFor` will be added.
 
-```js
+```ts
 waitFor(promise: Promise<any>) {
   this._pausingPromise = promise;
 }
